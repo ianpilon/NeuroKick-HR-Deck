@@ -859,4 +859,15 @@
                     }
                 });
                 
-                if (visibleSl
+                if (visibleSlide !== currentSlide) {
+                    currentSlide = visibleSlide;
+                    updateUI();
+                }
+            }, 100);
+        });
+
+        // Initialize
+        updateUI();
+    </script>
+</body>
+</html>
