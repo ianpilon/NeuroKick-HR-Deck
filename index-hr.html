@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroKick | For HR Leaders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            page-break-after: always;
+            scroll-snap-align: start;
+            cursor: pointer;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FF6B35;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+            .slide-counter, .nav-hint, .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">1 / 19</div>
+
+    <!-- Navigation Hint -->
+    <div class="nav-hint">Click or press arrow keys to navigate</div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="text-center px-12 max-w-5xl">
+            <div class="text-7xl font-bold mb-6">
+                <span class="text-white">Neuro</span><span class="text-orange-500">Kick</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-8 opacity-90">
+                Stop Losing Employees<br/>
+                to Bad Managers
+            </h1>
+            <p class="text-2xl text-gray-400">
+                The Early Warning System for HR Leaders
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Board Question -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-3xl font-bold text-gray-500 mb-8 text-center">
+                You know this conversation...
+            </h2>
+
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <div class="bg-gray-100 p-8 rounded-2xl">
+                    <p class="text-2xl text-gray-700">
+                        <span class="font-bold text-gray-900">Board:</span> "Why is turnover so high? What are we doing about it?"
+                    </p>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-2 border-orange-200">
+                    <p class="text-2xl text-gray-700">
+                        <span class="font-bold text-orange-600">Exit Interviews:</span> "My manager." (Over and over.)
+                    </p>
+                </div>
+
+                <div class="bg-gray-100 p-8 rounded-2xl">
+                    <p class="text-2xl text-gray-700">
+                        <span class="font-bold text-gray-900">The Problem:</span> By then, teams are already gone. Damage is done.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-2xl text-gray-600">
+                    You suspect managers are the problem.<br/>
+                    <span class="font-bold">You just can't prove it until it's too late.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Crisis -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-center text-white">
+            <h2 class="text-4xl font-bold mb-12">
+                The management-driven turnover crisis
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-white/20 p-8 rounded-2xl">
+                    <div class="text-6xl font-bold mb-4">70%</div>
+                    <div class="text-xl">of employee turnover is<br/>management-related</div>
+                </div>
+
+                <div class="bg-white/20 p-8 rounded-2xl">
+                    <div class="text-6xl font-bold mb-4">$250K</div>
+                    <div class="text-xl">cost per regrettable<br/>turnover</div>
+                </div>
+
+                <div class="bg-white/20 p-8 rounded-2xl">
+                    <div class="text-6xl font-bold mb-4">6+</div>
+                    <div class="text-xl">months too late when<br/>exit interviews happen</div>
+                </div>
+
+                <div class="bg-white/20 p-8 rounded-2xl">
+                    <div class="text-6xl font-bold mb-4">0</div>
+                    <div class="text-xl">ways to identify struggling<br/>managers early</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: The Annual Cost -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-3xl font-bold text-gray-500 mb-8">
+                For a company with 250 managers
+            </h2>
+
+            <div class="text-9xl font-bold gradient-text mb-8">$8.6M</div>
+
+            <h3 class="text-4xl font-bold text-gray-900 mb-6">
+                Annual cost of poor management
+            </h3>
+
+            <div class="grid grid-cols-2 gap-8 max-w-2xl mx-auto mt-12">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-gray-900">$3.8M</div>
+                    <div class="text-gray-600">Management-related turnover</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-gray-900">$4.8M</div>
+                    <div class="text-gray-600">Employee disengagement</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The Real Problem -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight">
+                Exit interviews are a<br/>
+                <span class="gradient-text">lagging indicator.</span>
+            </h2>
+
+            <p class="text-3xl text-gray-600 mb-8">
+                By the time you learn "my manager" was the problem,<br/>
+                the damage is done.
+            </p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+                <p class="text-2xl text-gray-700">
+                    <span class="font-bold">What you need:</span><br/>
+                    A leading indicator that spots struggling managers<br/>
+                    <span class="text-orange-500 font-bold">before their teams start quitting.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Introducing NeuroKick -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-3xl font-bold text-gray-500 mb-4">
+                Introducing
+            </h2>
+
+            <div class="text-7xl font-bold mb-6">
+                <span class="text-gray-900">Neuro</span><span class="text-orange-500">Kick</span>
+            </div>
+
+            <h3 class="text-4xl font-bold text-gray-900 mb-8">
+                The Early Warning System for HR Leaders
+            </h3>
+
+            <p class="text-2xl text-gray-600 max-w-3xl mx-auto">
+                Spot struggling managers before their teams quit.<br/>
+                Intervene early. Reduce management-driven turnover.<br/>
+                <span class="text-orange-500 font-bold">Finally get ahead of the problem.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 7: What You Get -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                What NeuroKick gives you
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Reduce Turnover 25-30%</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Identify disengaging managers early</li>
+                        <li>Data-driven interventions</li>
+                        <li>$2-3M annual savings (250 managers)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Early Warning System</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Real-time manager engagement signals</li>
+                        <li>Act 3-6 months before exit interviews</li>
+                        <li>Proactive, not reactive</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Know Who Needs Help</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Stop guessing who's struggling</li>
+                        <li>See engagement patterns in real-time</li>
+                        <li>Focus coaching where it matters</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">4</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Prove Programs Work</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Connect L&D spend to retention</li>
+                        <li>Show board concrete ROI</li>
+                        <li>Justify HR budget with data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: The Key Numbers -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-white">
+            <h2 class="text-4xl font-bold mb-16 text-center">
+                The numbers that matter
+            </h2>
+
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-7xl font-bold mb-4">25-30%</div>
+                    <div class="text-2xl">Turnover Reduction</div>
+                    <div class="text-lg text-orange-200 mt-2">(management-related attrition)</div>
+                </div>
+
+                <div>
+                    <div class="text-7xl font-bold mb-4">3-6</div>
+                    <div class="text-2xl">Months Earlier</div>
+                    <div class="text-lg text-orange-200 mt-2">(than exit interviews)</div>
+                </div>
+
+                <div>
+                    <div class="text-7xl font-bold mb-4">$2.2M</div>
+                    <div class="text-2xl">Annual Savings</div>
+                    <div class="text-lg text-orange-200 mt-2">(typical 250-manager company)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: How It Works -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                How it works
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Managers engage with private development tools</div>
+                        <div class="text-gray-600">67% adoption vs. 23% industry average—because privacy builds trust.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">System tracks WHO is engaging (not their scores)</div>
+                        <div class="text-gray-600">You see engagement patterns, not performance data.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">You see patterns: who's developing, who's disengaging</div>
+                        <div class="text-gray-600">Early warning signals before problems become crises.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">4</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Intervene early with targeted coaching</div>
+                        <div class="text-gray-600">Help struggling managers before their teams leave.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: The Intelligence You Get -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Leading indicators, not lagging ones
+            </h2>
+
+            <div class="grid grid-cols-2 gap-12">
+                <div class="bg-green-50 p-8 rounded-2xl border-2 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-700 mb-6">The intelligence you get</h3>
+                    <ul class="space-y-3 text-lg text-gray-700">
+                        <li>Manager engagement with development (real-time)</li>
+                        <li>Early warning signals (declining patterns)</li>
+                        <li>Correlation to team retention metrics</li>
+                        <li>Data-driven intervention triggers</li>
+                        <li>Board-ready ROI metrics</li>
+                    </ul>
+                </div>
+
+                <div class="bg-red-50 p-8 rounded-2xl border-2 border-red-400">
+                    <h3 class="text-2xl font-bold text-red-600 mb-6">What stays private</h3>
+                    <ul class="space-y-3 text-lg text-gray-700">
+                        <li>Individual assessment scores</li>
+                        <li>Personal development areas</li>
+                        <li>Coaching conversations</li>
+                        <li>Performance reviews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-2xl text-gray-700">
+                    <span class="font-bold">Privacy drives adoption.</span><br/>
+                    If managers don't trust it, they won't use it—and you get no data.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: vs. Traditional Approaches -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Traditional approaches vs. NeuroKick
+            </h2>
+
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-xl text-center">
+                        <div class="text-gray-500 text-sm mb-2">Traditional</div>
+                        <div class="text-xl font-bold text-gray-700">Exit interviews (too late)</div>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-xl text-center border-2 border-orange-500">
+                        <div class="text-orange-500 text-sm mb-2">NeuroKick</div>
+                        <div class="text-xl font-bold text-gray-900">Early warning signals (real-time)</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-xl text-center">
+                        <div class="text-xl font-bold text-gray-700">Annual performance reviews</div>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-xl text-center border-2 border-orange-500">
+                        <div class="text-xl font-bold text-gray-900">Continuous engagement tracking</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-xl text-center">
+                        <div class="text-xl font-bold text-gray-700">Can't predict problems</div>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-xl text-center border-2 border-orange-500">
+                        <div class="text-xl font-bold text-gray-900">Predictive indicators</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-xl text-center">
+                        <div class="text-xl font-bold text-gray-700">Reactive interventions</div>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-xl text-center border-2 border-orange-500">
+                        <div class="text-xl font-bold text-gray-900">Proactive coaching</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-xl text-gray-600">
+                    <span class="font-bold">Act 3-6 months earlier</span> than exit interviews allow.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: The ROI Story -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">
+                The ROI your board wants to see
+            </h2>
+
+            <div class="text-center text-gray-500 mb-8">Example: 250 managers, 2,000 employees</div>
+
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="bg-gray-100 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-500 mb-6">Your Current Annual Cost</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li>360 departures/year (18% turnover)</li>
+                        <li>252 are management-related (70%)</li>
+                        <li>$3.8M in turnover costs</li>
+                        <li>$4.8M in disengagement costs</li>
+                        <li class="font-bold text-xl pt-2 border-t">$8.6M total annual cost</li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-2 border-orange-500">
+                    <h3 class="text-xl font-bold text-orange-600 mb-6">With NeuroKick</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li><span class="font-bold">$95,000/year</span> investment</li>
+                        <li><span class="font-bold">25%</span> reduction in turnover</li>
+                        <li><span class="font-bold">15%</span> engagement lift</li>
+                        <li><span class="font-bold">$2.2M</span> annual savings</li>
+                        <li class="font-bold text-xl pt-2 border-t text-orange-600">18x ROI, 2.6-month payback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-xl text-center">
+                <p class="text-lg text-gray-600">
+                    Preventing just <span class="font-bold">3 management-related turnovers</span> ($750K saved) pays for the entire platform.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Your Board Presentation -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="max-w-5xl px-12 w-full text-center text-white">
+            <h2 class="text-3xl font-bold text-orange-500 mb-8">
+                Imagine walking into the boardroom and saying:
+            </h2>
+
+            <div class="bg-white/10 p-12 rounded-3xl mb-12">
+                <p class="text-2xl md:text-3xl leading-relaxed italic">
+                    "Management-related turnover was costing us <span class="text-orange-500">$8.6M annually</span>. With NeuroKick's early warning system, we identified struggling managers before their teams disengaged. Result: <span class="text-orange-500">28% reduction</span> in management-driven attrition, saving <span class="text-orange-500">$2.4M</span> in year one. Platform cost: $95K. That's <span class="text-orange-500">25x ROI</span>."
+                </p>
+            </div>
+
+            <p class="text-xl text-gray-400">
+                That's the conversation NeuroKick enables.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 14: Why Managers Use It -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8">
+                Why managers actually use it
+            </h2>
+
+            <div class="text-8xl font-bold gradient-text mb-8">67%</div>
+
+            <h3 class="text-3xl font-bold text-gray-700 mb-8">
+                Adoption rate (vs. 23% industry average)
+            </h3>
+
+            <div class="grid grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                    <h4 class="font-bold text-red-600 mb-3">Other Tools</h4>
+                    <p class="text-gray-600">Feel like surveillance. Managers avoid them. You get no data.</p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                    <h4 class="font-bold text-green-600 mb-3">NeuroKick</h4>
+                    <p class="text-gray-600">Privacy-first. Managers trust it. They WANT to use it.</p>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <p class="text-xl text-gray-600">
+                    <span class="font-bold">If managers don't use it, you don't get intelligence.</span><br/>
+                    Our adoption rate is the highest in the industry because privacy drives trust.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Customer Success -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Real results from HR leaders like you
+            </h2>
+
+            <div class="bg-white p-10 rounded-2xl shadow-lg mb-8">
+                <div class="text-gray-500 mb-6">Financial Services Company | 350 Managers | 22% Annual Turnover</div>
+
+                <div class="grid grid-cols-4 gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-500">68%</div>
+                        <div class="text-gray-600">Adoption</div>
+                        <div class="text-sm text-gray-400">(in 60 days)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-500">47</div>
+                        <div class="text-gray-600">At-risk managers</div>
+                        <div class="text-sm text-gray-400">(identified early)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-500">31%</div>
+                        <div class="text-gray-600">Turnover reduction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-500">$3.7M</div>
+                        <div class="text-gray-600">Saved</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-500">
+                <p class="text-xl text-gray-700 italic mb-4">
+                    "We always suspected managers were driving turnover, but exit interviews only confirmed it after the damage was done. NeuroKick gave us the early warning system we needed. We can now intervene when managers start struggling—before their best people start leaving. Game changer."
+                </p>
+                <p class="text-gray-500 font-bold">— Chief People Officer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: The L&D Partnership -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                How this works with your L&D team
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8 mb-12">
+                <div class="bg-orange-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For You (HR Leader)</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Early warning system for turnover</li>
+                        <li>Data-driven intervention points</li>
+                        <li>Reduced attrition costs</li>
+                        <li>Proves people programs work</li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">For Your L&D Team</h3>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li>Proof that programs drive results</li>
+                        <li>High adoption of development tools</li>
+                        <li>Real-time coaching intelligence</li>
+                        <li>Board-ready ROI metrics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 text-white p-8 rounded-2xl text-center">
+                <p class="text-xl">
+                    <span class="text-orange-500 font-bold">Everyone wins:</span> L&D champions the platform. You approve the budget.<br/>
+                    Managers use it. Business gets better retention.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: Timeline -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Time to value
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Month 1</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Setup & Rollout</div>
+                        <div class="text-gray-600">60%+ adoption in first 30 days</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Month 2-3</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Intelligence Gathering</div>
+                        <div class="text-gray-600">Early warning signals identified, at-risk managers flagged</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Month 4-6</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Interventions & ROI</div>
+                        <div class="text-gray-600">Targeted coaching, measurable turnover reduction begins</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Month 7-12</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Full ROI Realization</div>
+                        <div class="text-gray-600">25-30% reduction in management-related turnover</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-xl text-gray-600">
+                    <span class="font-bold">See patterns in 30 days.</span> Prove ROI in 90-180 days.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: The Transformation -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-white text-center">
+            <h2 class="text-4xl font-bold mb-16">
+                Your transformation
+            </h2>
+
+            <div class="grid grid-cols-2 gap-12 max-w-3xl mx-auto">
+                <div>
+                    <div class="text-2xl text-orange-200 mb-4">From</div>
+                    <div class="text-3xl font-bold">"Reactive Damage Control"</div>
+                    <div class="mt-4 text-xl text-orange-100">Finding out about manager problems<br/>after teams have already quit</div>
+                </div>
+
+                <div>
+                    <div class="text-2xl text-orange-200 mb-4">To</div>
+                    <div class="text-3xl font-bold">"Proactive People Strategy"</div>
+                    <div class="mt-4 text-xl text-orange-100">Identifying struggling managers early<br/>and intervening before the damage</div>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <p class="text-2xl">
+                    Stop flying blind on manager quality.<br/>
+                    <span class="font-bold">Get the early warning system.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: Next Steps -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="text-center px-12 max-w-4xl text-white">
+            <div class="text-7xl font-bold mb-8">
+                <span class="text-white">Neuro</span><span class="text-orange-500">Kick</span>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-12">
+                Ready to stop losing employees to bad managers?
+            </h2>
+
+            <div class="grid grid-cols-3 gap-6 mb-12">
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <div class="text-orange-500 font-bold mb-2">Option 1</div>
+                    <div class="text-xl font-bold mb-2">Calculate Your Cost</div>
+                    <div class="text-gray-400 text-sm">See what poor management costs you</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <div class="text-orange-500 font-bold mb-2">Option 2</div>
+                    <div class="text-xl font-bold mb-2">Request a Demo</div>
+                    <div class="text-gray-400 text-sm">See the early warning system in action</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <div class="text-orange-500 font-bold mb-2">Option 3</div>
+                    <div class="text-xl font-bold mb-2">Start a Pilot</div>
+                    <div class="text-gray-400 text-sm">30-day proof of concept</div>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-xl">
+                <div>neurokick.ai</div>
+                <div class="text-gray-400">Ian Pilon, Founder</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const totalSlides = 19;
+        let currentSlide = 1;
+
+        // Get all slides and add IDs
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+            slide.id = `slide-${index + 1}`;
+            slide.dataset.slide = index + 1;
+        });
+
+        // Update slide counter and progress bar
+        function updateUI() {
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+        }
+
+        // Navigate to specific slide
+        function goToSlide(slideNum) {
+            if (slideNum < 1) slideNum = 1;
+            if (slideNum > totalSlides) slideNum = totalSlides;
+
+            currentSlide = slideNum;
+            const targetSlide = document.getElementById(`slide-${slideNum}`);
+            if (targetSlide) {
+                targetSlide.scrollIntoView({ behavior: 'smooth' });
+                updateUI();
+            }
+        }
+
+        // Next slide
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        // Previous slide
+        function prevSlide() {
+            if (currentSlide > 1) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // Click handler
+        document.addEventListener('click', function(e) {
+            const clickX = e.clientX;
+            const screenWidth = window.innerWidth;
+
+            if (clickX < screenWidth * 0.2) {
+                prevSlide();
+            } else {
+                nextSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                case ' ':
+                case 'Enter':
+                case 'PageDown':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                case 'PageUp':
+                case 'Backspace':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    goToSlide(1);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    goToSlide(totalSlides);
+                    break;
+            }
+        });
+
+        // Track scroll position
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                let maxVisibility = 0;
+                let visibleSlide = 1;
+
+                slides.forEach((slide, index) => {
+                    const rect = slide.getBoundingClientRect();
+                    const visibility = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+                    if (visibility > maxVisibility) {
+                        maxVisibility = visibility;
+                        visibleSlide = index + 1;
+                    }
+                });
+
+                if (visibleSlide !== currentSlide) {
+                    currentSlide = visibleSlide;
+                    updateUI();
+                }
+            }, 100);
+        });
+
+        // Initialize
+        updateUI();
+    </script>
+</body>
+</html>
