@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroKick | For Managers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            page-break-after: always;
+            scroll-snap-align: start;
+            cursor: pointer;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FF6B35;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+            .slide-counter, .nav-hint, .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">1 / 18</div>
+
+    <!-- Navigation Hint -->
+    <div class="nav-hint">Click or press arrow keys to navigate</div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="text-center px-12 max-w-5xl">
+            <div class="text-7xl font-bold mb-6">
+                <span class="text-white">Neuro</span><span class="text-orange-500">Kick</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-8 opacity-90">
+                Your Private Space to<br/>
+                Grow as a Leader
+            </h1>
+            <p class="text-2xl text-gray-400">
+                Real development. Complete privacy. Your control.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Let's Be Honest -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight">
+                Let's be honest...
+            </h2>
+
+            <div class="space-y-6 max-w-3xl mx-auto text-left">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <p class="text-2xl text-gray-700">
+                        When your company says "new leadership development tool"...
+                    </p>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-2 border-orange-200">
+                    <p class="text-2xl text-gray-700">
+                        ...you're probably thinking: <span class="font-bold text-orange-600">"Great, another way to track me."</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <p class="text-2xl text-gray-600">
+                    We get it. That's exactly why we built NeuroKick differently.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: This Is Different -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-center text-white">
+            <h2 class="text-4xl font-bold mb-12">
+                NeuroKick is NOT surveillance
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+                <div class="bg-white/20 p-8 rounded-2xl text-left">
+                    <div class="text-2xl font-bold mb-4">It's NOT</div>
+                    <ul class="space-y-3 text-xl">
+                        <li>A way for your boss to track you</li>
+                        <li>Another HR checkbox</li>
+                        <li>Generic training that wastes time</li>
+                        <li>Performance monitoring in disguise</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/20 p-8 rounded-2xl text-left">
+                    <div class="text-2xl font-bold mb-4">It IS</div>
+                    <ul class="space-y-3 text-xl">
+                        <li>Your private development space</li>
+                        <li>Real-time insights you control</li>
+                        <li>Personalized coaching at your pace</li>
+                        <li>A tool that helps YOU grow</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-2xl">
+                <span class="font-bold">Your data stays with you. Period.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 4: What It Actually Is -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-3xl font-bold text-gray-500 mb-4">
+                Think of it as
+            </h2>
+
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-8">
+                A Private Leadership Coach
+            </div>
+
+            <p class="text-2xl text-gray-600 max-w-3xl mx-auto mb-12">
+                That shows you what's working (and what's not) in real-time—<br/>
+                without sharing anything with your boss, HR, or anyone else.
+            </p>
+
+            <div class="grid grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">Real-time</div>
+                    <div class="text-gray-600">Insights on your leadership</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">Personalized</div>
+                    <div class="text-gray-600">To your style & challenges</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">Private</div>
+                    <div class="text-gray-600">Your data, your eyes only</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">Yours</div>
+                    <div class="text-gray-600">You control everything</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The Privacy Promise -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Here's exactly what stays private
+            </h2>
+
+            <div class="grid grid-cols-2 gap-12">
+                <div class="bg-green-50 p-8 rounded-2xl border-2 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-700 mb-6">What your company sees</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li>That you're engaging with development</li>
+                        <li>That you're investing time in growth</li>
+                        <li>That you're showing up consistently</li>
+                    </ul>
+                    <p class="mt-6 text-gray-500 italic">That's it. Nothing else.</p>
+                </div>
+
+                <div class="bg-red-50 p-8 rounded-2xl border-2 border-red-400">
+                    <h3 class="text-2xl font-bold text-red-600 mb-6">What NO ONE sees (except you)</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li>Your assessment scores or results</li>
+                        <li>Which areas you're working on</li>
+                        <li>Your coaching conversations</li>
+                        <li>Your progress or struggles</li>
+                        <li>Your reflections or notes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg text-center">
+                <p class="text-xl text-gray-700">
+                    <span class="font-bold">It's like having a personal trainer.</span><br/>
+                    The gym knows you're showing up. They don't know your weight, your max lifts,<br/>
+                    or what you're struggling with. That's between you and your trainer.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: What You Get -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                What's in it for you
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Know What's Working</h3>
+                    <p class="text-lg text-gray-600">
+                        Real-time feedback on your leadership. See patterns before your next review. Course-correct before small issues become big problems.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Private Space to Grow</h3>
+                    <p class="text-lg text-gray-600">
+                        Work on development areas nobody else sees. Safe space to try new approaches. Learn from mistakes without judgment.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Personalized Coaching</h3>
+                    <p class="text-lg text-gray-600">
+                        Insights tailored to your team, your challenges, your style. Not generic training. Focus on what matters to you right now.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">4</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Build Your Reputation</h3>
+                    <p class="text-lg text-gray-600">
+                        Your engagement signals commitment to growth. No need to share personal details. Showing up is the signal that matters.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Time Investment -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-white text-center">
+            <h2 class="text-4xl font-bold mb-12">
+                The time investment
+            </h2>
+
+            <div class="text-9xl font-bold mb-8">15</div>
+            <div class="text-4xl mb-12">minutes per week</div>
+
+            <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div class="bg-white/20 p-6 rounded-2xl">
+                    <div class="text-2xl font-bold mb-2">Setup</div>
+                    <div class="text-xl">5 minutes</div>
+                </div>
+                <div class="bg-white/20 p-6 rounded-2xl">
+                    <div class="text-2xl font-bold mb-2">Weekly</div>
+                    <div class="text-xl">10-15 minutes</div>
+                </div>
+                <div class="bg-white/20 p-6 rounded-2xl">
+                    <div class="text-2xl font-bold mb-2">Your Control</div>
+                    <div class="text-xl">100%</div>
+                </div>
+            </div>
+
+            <p class="mt-12 text-xl text-orange-100">
+                15 minutes a week helps you avoid hours of cleanup from leadership mistakes.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 8: How It Works -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                How it works
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Quick Setup (5 minutes)</div>
+                        <div class="text-gray-600">Create your private account. Set your development goals. Take a baseline assessment (confidential).</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Start Getting Insights</div>
+                        <div class="text-gray-600">Real-time feedback on leadership behaviors. Personalized recommendations. Progress tracking you control.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Weekly Check-ins (10-15 min)</div>
+                        <div class="text-gray-600">Track your growth over time. Adjust focus areas as needed. Apply insights to real situations.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">4</div>
+                    <div class="bg-gray-50 p-6 rounded-xl flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Continuous Growth</div>
+                        <div class="text-gray-600">See patterns emerge. Build skills for your next role. Prepare for performance reviews with confidence.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Common Questions -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Questions you're probably asking
+            </h2>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-xl font-bold text-gray-900 mb-2">"Will my boss see my scores or weaknesses?"</div>
+                    <div class="text-gray-600">Absolutely not. Your boss only sees that you're engaged (yes/no). They don't see scores, assessments, growth areas, or any individual data.</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-xl font-bold text-gray-900 mb-2">"What if I'm working on something sensitive?"</div>
+                    <div class="text-gray-600">That stays completely private. Working on "giving difficult feedback"? Nobody knows. The platform is your space to grow—nobody else sees what you're focusing on.</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-xl font-bold text-gray-900 mb-2">"I'm already a good manager. Why do I need this?"</div>
+                    <div class="text-gray-600">Even great managers have blind spots. NeuroKick helps you see patterns you can't see yourself. Plus, engagement shows you're invested in growth—which matters for advancement.</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-xl font-bold text-gray-900 mb-2">"Is this just surveillance in disguise?"</div>
+                    <div class="text-gray-600">No—it's the opposite. NeuroKick was built specifically to NOT be surveillance. This is the first leadership tool designed to give you control.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: What Other Managers Say -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                What managers like you are saying
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-500">
+                    <p class="text-lg text-gray-700 italic mb-4">
+                        "I was skeptical at first—another 'tool' to track me. But NeuroKick is different. It's actually helped me see patterns in my 1-on-1s that I was missing. And knowing my data is private? Game changer."
+                    </p>
+                    <p class="text-gray-500 font-bold">— Sarah K., Engineering Manager</p>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-500">
+                    <p class="text-lg text-gray-700 italic mb-4">
+                        "The real-time feedback is gold. Instead of waiting for my annual review to find out I'm not delegating enough, I can see it week-to-week and adjust."
+                    </p>
+                    <p class="text-gray-500 font-bold">— Michael R., Sales Director</p>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-500">
+                    <p class="text-lg text-gray-700 italic mb-4">
+                        "I've tried every leadership program my company offers. This is the only one I've stuck with. Why? Because it's mine. My data, my growth, my pace."
+                    </p>
+                    <p class="text-gray-500 font-bold">— Jennifer T., Product Manager</p>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-500">
+                    <p class="text-lg text-gray-700 italic mb-4">
+                        "15 minutes a week has made me a better manager. It's like having a coach in my pocket who doesn't judge me."
+                    </p>
+                    <p class="text-gray-500 font-bold">— David L., Operations Manager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: What to Expect -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                What to expect
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Week 1</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Getting Started</div>
+                        <div class="text-gray-600">Set up account, take initial assessment, review your personalized insights</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Weeks 2-4</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Building the Habit</div>
+                        <div class="text-gray-600">Weekly check-ins, see patterns emerge, start applying insights</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Months 2-3</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Seeing Results</div>
+                        <div class="text-gray-600">Notice improvements in team interactions, build confidence in your leadership</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="w-32 text-right">
+                        <div class="text-2xl font-bold text-orange-500">Ongoing</div>
+                    </div>
+                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="font-bold text-gray-900">Continuous Growth</div>
+                        <div class="text-gray-600">Build skills for your next role, prepare for reviews with confidence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Tips for Success -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Tips for getting the most value
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Be Honest</div>
+                    <p class="text-lg text-gray-600">
+                        This is your private space—nobody sees it. The more honest you are, the better your insights. Don't game the system—you only hurt yourself.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Make It a Habit</div>
+                    <p class="text-lg text-gray-600">
+                        Schedule 15 minutes every Friday. Reflect on the week's leadership moments. Consistency compounds over time.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Focus on One Thing</div>
+                    <p class="text-lg text-gray-600">
+                        Don't try to fix everything at once. Pick one skill per month. Practice, reflect, adjust. Move to next skill when ready.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Apply Immediately</div>
+                    <p class="text-lg text-gray-600">
+                        Don't just read—do. Try one new behavior each week. Notice what happens. Adjust based on results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: The Choice -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="max-w-5xl px-12 w-full text-center text-white">
+            <h2 class="text-4xl font-bold mb-12">
+                You have two options
+            </h2>
+
+            <div class="grid grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="bg-white/10 p-10 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-gray-400 mb-6">Option 1: Do the Minimum</h3>
+                    <ul class="space-y-4 text-left text-lg text-gray-400">
+                        <li>Set up account (5 minutes)</li>
+                        <li>Engage occasionally</li>
+                        <li>Company sees you're participating</li>
+                        <li>Miss out on real development</li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-500/30 p-10 rounded-2xl border-2 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-500 mb-6">Option 2: Actually Grow</h3>
+                    <ul class="space-y-4 text-left text-lg">
+                        <li>Invest 15-20 minutes weekly</li>
+                        <li>Apply insights to real situations</li>
+                        <li>Build skills for your next role</li>
+                        <li>Become the leader you want to be</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-12 text-2xl">
+                Your data stays private either way.<br/>
+                <span class="text-orange-500 font-bold">But Option 2 changes your career.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 14: Why Your Company Chose This -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">
+                Why your company chose NeuroKick
+            </h2>
+
+            <p class="text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Your L&D and HR teams want to support your development—but they know traditional tools feel like surveillance. That's why they chose a privacy-first approach.
+            </p>
+
+            <div class="grid grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">What they get</h3>
+                    <ul class="text-left space-y-2 text-gray-600">
+                        <li>Visibility that managers are investing in growth</li>
+                        <li>Aggregate engagement patterns</li>
+                        <li>Proof that programs are working</li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-8 rounded-2xl border-2 border-orange-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">What you get</h3>
+                    <ul class="text-left space-y-2 text-gray-600">
+                        <li>Private, personalized insights</li>
+                        <li>Real-time feedback on leadership</li>
+                        <li>A safe space to work on growth</li>
+                        <li>Control over your development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-12 text-xl text-gray-700">
+                <span class="font-bold">Everyone wins.</span> They get confidence you're developing.<br/>
+                You get real tools that help you grow.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 15: Getting Started -->
+    <div class="slide bg-gray-50">
+        <div class="max-w-5xl px-12 w-full">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">
+                Getting started
+            </h2>
+
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Check Your Email</div>
+                        <div class="text-gray-600">You'll receive an invitation with your unique setup link, getting started video (5 min), and privacy overview.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Set Up Your Account (5 min)</div>
+                        <div class="text-gray-600">Create secure login, review privacy settings, set initial development goals.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Take Your First Assessment (15 min)</div>
+                        <div class="text-gray-600">Answer questions about your leadership. All responses completely private. Foundation for personalized insights.</div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">4</div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex-1">
+                        <div class="text-xl font-bold text-gray-900 mb-2">Start Your Development Journey</div>
+                        <div class="text-gray-600">Review insights, pick your first focus area, schedule weekly check-ins, begin growing.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: Support -->
+    <div class="slide">
+        <div class="max-w-5xl px-12 w-full text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">
+                Need help?
+            </h2>
+
+            <div class="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">In-App Support</div>
+                    <p class="text-gray-600">Click the help icon anytime</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Email</div>
+                    <p class="text-gray-600">support@neurokick.com</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">Privacy Questions</div>
+                    <p class="text-gray-600">privacy@neurokick.com</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-orange-50 p-8 rounded-2xl max-w-2xl mx-auto">
+                <p class="text-xl text-gray-700">
+                    <span class="font-bold">Your data is protected.</span><br/>
+                    Bank-level encryption. You can export or delete anytime.<br/>
+                    Full details at neurokick.ai/privacy
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: The Bottom Line -->
+    <div class="slide bg-orange-500">
+        <div class="max-w-5xl px-12 w-full text-white text-center">
+            <h2 class="text-4xl font-bold mb-12">
+                The bottom line
+            </h2>
+
+            <p class="text-3xl mb-12 max-w-3xl mx-auto">
+                NeuroKick is different from every other "leadership tool" you've tried.
+            </p>
+
+            <div class="bg-white/20 p-10 rounded-2xl max-w-3xl mx-auto mb-12">
+                <p class="text-2xl">
+                    Your company knows you're investing in growth.<br/>
+                    You get private insights that make you better at your job.<br/>
+                    <span class="font-bold">Everyone wins.</span>
+                </p>
+            </div>
+
+            <p class="text-xl text-orange-100">
+                Most managers who try it keep using it—<br/>
+                not because they have to, but because it helps.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 18: Ready -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="text-center px-12 max-w-4xl text-white">
+            <div class="text-7xl font-bold mb-8">
+                <span class="text-white">Neuro</span><span class="text-orange-500">Kick</span>
+            </div>
+
+            <h2 class="text-4xl font-bold mb-8">
+                Your Private Space to Grow as a Leader
+            </h2>
+
+            <p class="text-2xl text-gray-400 mb-12">
+                Watch for your invitation email with your unique setup link.
+            </p>
+
+            <div class="bg-white/10 p-8 rounded-2xl max-w-xl mx-auto">
+                <p class="text-xl">
+                    Questions? Ask your L&D team or email<br/>
+                    <span class="text-orange-500 font-bold">support@neurokick.com</span>
+                </p>
+            </div>
+
+            <p class="mt-12 text-gray-500 italic">
+                Built for managers, by people who understand what it's like to lead a team.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const totalSlides = 18;
+        let currentSlide = 1;
+
+        // Get all slides and add IDs
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+            slide.id = `slide-${index + 1}`;
+            slide.dataset.slide = index + 1;
+        });
+
+        // Update slide counter and progress bar
+        function updateUI() {
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+        }
+
+        // Navigate to specific slide
+        function goToSlide(slideNum) {
+            if (slideNum < 1) slideNum = 1;
+            if (slideNum > totalSlides) slideNum = totalSlides;
+
+            currentSlide = slideNum;
+            const targetSlide = document.getElementById(`slide-${slideNum}`);
+            if (targetSlide) {
+                targetSlide.scrollIntoView({ behavior: 'smooth' });
+                updateUI();
+            }
+        }
+
+        // Next slide
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        // Previous slide
+        function prevSlide() {
+            if (currentSlide > 1) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // Click handler
+        document.addEventListener('click', function(e) {
+            const clickX = e.clientX;
+            const screenWidth = window.innerWidth;
+
+            if (clickX < screenWidth * 0.2) {
+                prevSlide();
+            } else {
+                nextSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                case ' ':
+                case 'Enter':
+                case 'PageDown':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                case 'PageUp':
+                case 'Backspace':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    goToSlide(1);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    goToSlide(totalSlides);
+                    break;
+            }
+        });
+
+        // Track scroll position
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                let maxVisibility = 0;
+                let visibleSlide = 1;
+
+                slides.forEach((slide, index) => {
+                    const rect = slide.getBoundingClientRect();
+                    const visibility = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+                    if (visibility > maxVisibility) {
+                        maxVisibility = visibility;
+                        visibleSlide = index + 1;
+                    }
+                });
+
+                if (visibleSlide !== currentSlide) {
+                    currentSlide = visibleSlide;
+                    updateUI();
+                }
+            }, 100);
+        });
+
+        // Initialize
+        updateUI();
+    </script>
+</body>
+</html>
